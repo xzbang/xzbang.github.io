@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -98,7 +98,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"right","display":"hide"},
     fancybox: true,
     motion: true,
@@ -326,42 +326,12 @@
 
       
         
-          
-            <h6 id="1-DataFrame-对特定的两列画图"><a href="#1-DataFrame-对特定的两列画图" class="headerlink" title="1.DataFrame 对特定的两列画图"></a>1.DataFrame 对特定的两列画图</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.plot(x=<span class="string">'score'</span>, y=<span class="string">'num'</span>, kind=<span class="string">'line'</span>)</div></pre></td></tr></table></figure>
-<h6 id="2-输出DataFrame中每一列的数据类型"><a href="#2-输出DataFrame中每一列的数据类型" class="headerlink" title="2.输出DataFrame中每一列的数据类型"></a>2.输出DataFrame中每一列的数据类型</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">34</span>]: <span class="keyword">import</span> pandas</div><div class="line">In[<span class="number">35</span>]: <span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">In[<span class="number">36</span>]: data2 = [[<span class="number">1</span>,<span class="number">2.4</span>,<span class="string">'a'</span>],[<span class="number">2</span>,<span class="number">4.3</span>,<span class="string">'b'</span>],[<span class="number">3</span>,<span class="number">2.2</span>,<span class="string">'c'</span>]]</div><div class="line">In[<span class="number">37</span>]: df = pd.DataFrame(data=data2, columns=[<span class="string">'num'</span>, <span class="string">'price'</span>, <span class="string">'name'</span>])</div><div class="line">In[<span class="number">38</span>]: df.dtypes</div><div class="line">Out[<span class="number">38</span>]: </div><div class="line">num        int64</div><div class="line">price    float64</div><div class="line">name      object</div><div class="line">dtype: object</div></pre></td></tr></table></figure>
-<h6 id="3-DataFrame按列值过滤数据"><a href="#3-DataFrame按列值过滤数据" class="headerlink" title="3.DataFrame按列值过滤数据"></a>3.DataFrame按列值过滤数据</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">46</span>]: <span class="keyword">print</span> df[(df.num&gt;<span class="number">2</span>) &amp; (df.price&lt;<span class="number">4.3</span>)]</div><div class="line">   num  price name</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div></pre></td></tr></table></figure>
-<h6 id="4-python正则表达式"><a href="#4-python正则表达式" class="headerlink" title="4.python正则表达式"></a>4.python正则表达式</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">24</span>]: <span class="keyword">import</span> re</div><div class="line">In[<span class="number">25</span>]: pattern = re.compile(<span class="string">r'^[0-9]&#123;11&#125;$'</span>)</div><div class="line">In[<span class="number">26</span>]: match = pattern.match(<span class="string">'12345678901'</span>)</div><div class="line">In[<span class="number">27</span>]: <span class="keyword">if</span> match: <span class="keyword">print</span> match.group()</div><div class="line"><span class="number">12345678901</span></div></pre></td></tr></table></figure>
-<h6 id="5-DataFrame按正则表达式过滤数据"><a href="#5-DataFrame按正则表达式过滤数据" class="headerlink" title="5.DataFrame按正则表达式过滤数据"></a>5.DataFrame按正则表达式过滤数据</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">53</span>]: name_pattern = <span class="string">r'[a,c]'</span></div><div class="line">In[<span class="number">54</span>]: <span class="keyword">print</span> df[df.name.str.contains(name_pattern, na=<span class="keyword">False</span>)]</div><div class="line">   num  price name</div><div class="line"><span class="number">0</span>    <span class="number">1</span>    <span class="number">2.4</span>    a</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div></pre></td></tr></table></figure>
-<hr>
-<h6 id="6-值替换"><a href="#6-值替换" class="headerlink" title="6.值替换"></a>6.值替换</h6><ul>
-<li>[ ] 对所有值进行替换</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">62</span>]: df.replace(to_replace=<span class="number">2</span>, value=<span class="number">4</span>)</div><div class="line">Out[<span class="number">62</span>]: </div><div class="line">   num  price name</div><div class="line"><span class="number">0</span>    <span class="number">1</span>    <span class="number">2.4</span>    a</div><div class="line"><span class="number">1</span>    <span class="number">4</span>    <span class="number">4.3</span>    b</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div></pre></td></tr></table></figure>
-<ul>
-<li>[ ] 对某一列的值进行替换</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">63</span>]: df[<span class="string">'name'</span>].replace(to_replace=<span class="string">'a'</span>, value=<span class="string">'d'</span>)</div><div class="line">Out[<span class="number">63</span>]: </div><div class="line"><span class="number">0</span>    d</div><div class="line"><span class="number">1</span>    b</div><div class="line"><span class="number">2</span>    c</div><div class="line">Name: name, dtype: object</div><div class="line">In[<span class="number">64</span>]: df.replace(to_replace=&#123;<span class="string">'name'</span>: <span class="string">'a'</span>&#125;, value=<span class="string">'d'</span>)</div><div class="line">Out[<span class="number">64</span>]: </div><div class="line">   num  price name</div><div class="line"><span class="number">0</span>    <span class="number">1</span>    <span class="number">2.4</span>    d</div><div class="line"><span class="number">1</span>    <span class="number">2</span>    <span class="number">4.3</span>    b</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div></pre></td></tr></table></figure>
-<ul>
-<li>[ ] 对多个列的某些值进行替换</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">65</span>]: df.replace(to_replace=&#123;<span class="string">'num'</span>: <span class="number">2</span>, <span class="string">'price'</span>: <span class="number">2.4</span>&#125;, value=<span class="number">5</span>)</div><div class="line">Out[<span class="number">65</span>]: </div><div class="line">   num  price name</div><div class="line"><span class="number">0</span>    <span class="number">1</span>    <span class="number">5.0</span>    a</div><div class="line"><span class="number">1</span>    <span class="number">5</span>    <span class="number">4.3</span>    b</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div><div class="line">In[<span class="number">66</span>]: df.replace(to_replace=&#123;<span class="string">'num'</span>: <span class="number">2</span>, <span class="string">'price'</span>: <span class="number">2.4</span>&#125;, value=&#123;<span class="string">'num'</span>: <span class="number">5</span>, <span class="string">'price'</span>: <span class="number">5.5</span>&#125;)</div><div class="line">Out[<span class="number">66</span>]: </div><div class="line">   num  price name</div><div class="line"><span class="number">0</span>    <span class="number">1</span>    <span class="number">5.5</span>    a</div><div class="line"><span class="number">1</span>    <span class="number">5</span>    <span class="number">4.3</span>    b</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div></pre></td></tr></table></figure>
-<ul>
-<li>[ ] 根据一列的值对另一列进行替换</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<hr>
-<h6 id="7-格式化数据"><a href="#7-格式化数据" class="headerlink" title="7.格式化数据"></a>7.格式化数据</h6><ul>
-<li>[ ] 将小数点后为0的数据去掉小数位</li>
-</ul>
-<p><em>代码来源于stackoverflow</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">df= pd.DataFrame(range(<span class="number">5</span>), columns=[<span class="string">'a'</span>])</div><div class="line">df.a = df.a.astype(float)</div><div class="line">df</div><div class="line"></div><div class="line">Out[<span class="number">33</span>]:</div><div class="line"></div><div class="line">          a</div><div class="line"><span class="number">0</span> <span class="number">0.0000000</span></div><div class="line"><span class="number">1</span> <span class="number">1.0000000</span></div><div class="line"><span class="number">2</span> <span class="number">2.0000000</span></div><div class="line"><span class="number">3</span> <span class="number">3.0000000</span></div><div class="line"><span class="number">4</span> <span class="number">4.0000000</span></div><div class="line"></div><div class="line">pd.options.display.float_format = <span class="string">'&#123;:,.0f&#125;'</span>.format</div><div class="line">df</div><div class="line"></div><div class="line">Out[<span class="number">35</span>]:</div><div class="line"></div><div class="line">   a</div><div class="line"><span class="number">0</span>  <span class="number">0</span></div><div class="line"><span class="number">1</span>  <span class="number">1</span></div><div class="line"><span class="number">2</span>  <span class="number">2</span></div><div class="line"><span class="number">3</span>  <span class="number">3</span></div><div class="line"><span class="number">4</span>  <span class="number">4</span></div></pre></td></tr></table></figure>
-<h6 id="8-将matplotlib-pyplot的绘图保存到文件"><a href="#8-将matplotlib-pyplot的绘图保存到文件" class="headerlink" title="8.将matplotlib.pyplot的绘图保存到文件"></a>8.将matplotlib.pyplot的绘图保存到文件</h6><p><em>代码来源于stackoverflow</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line">plt.savefig(<span class="string">'foo.png'</span>)</div><div class="line">plt.savefig(<span class="string">'foo.pdf'</span>)</div><div class="line">plt.savefig(<span class="string">'foo.png'</span>, bbox_inches=<span class="string">'tight'</span>)</div></pre></td></tr></table></figure>
-<p>其中，bbox_inches参数用于设置图形外围的空白区域格式。</p>
-<h6 id="9-打印python代码中的中文"><a href="#9-打印python代码中的中文" class="headerlink" title="9.打印python代码中的中文"></a>9.打印python代码中的中文</h6><p><em>代码来源于KM</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line">listA = [<span class="string">'\xe9\x93\x81\xe5\xb0\x86\xe5\x86\x9b1.0\xe7\xb3\xbb\xe7\xbb\x9f\xe6\x95\xb0\xe6\x8d\xae\xe8\xbf\x81\xe7\xa7\xbb'</span>]</div><div class="line">dictB = &#123;<span class="string">'name'</span>: <span class="string">'\xe9\x93\x81\xe5\xb0\x86\xe5\x86\x9b1.0\xe7\xb3\xbb\xe7\xbb\x9f\xe6\x95\xb0\xe6\x8d\xae\xe8\xbf\x81\xe7\xa7\xbb'</span>&#125;</div><div class="line">jsonC = &#123;<span class="string">'name'</span>: <span class="string">'\xe9\x93\x81\xe5\xb0\x86\xe5\x86\x9b1.0\xe7\xb3\xbb\xe7\xbb\x9f\xe6\x95\xb0\xe6\x8d\xae\xe8\xbf\x81\xe7\xa7\xbb'</span>&#125;</div><div class="line"></div><div class="line"><span class="keyword">print</span> listA</div><div class="line"><span class="keyword">print</span> dictB</div><div class="line"><span class="keyword">print</span> jsonC</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> _uniout</div><div class="line"><span class="keyword">print</span> _uniout.unescape(str(listA), <span class="string">'utf8'</span>)</div><div class="line"><span class="keyword">print</span> _uniout.unescape(str(dictB), <span class="string">'utf8'</span>)</div><div class="line"><span class="keyword">print</span> json.dumps(jsonC, ensure_ascii=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
-
-          
+          <h6 id="DataFrame-对特定的两列画图"><a href="#DataFrame-对特定的两列画图" class="headerlink" title="DataFrame 对特定的两列画图"></a>DataFrame 对特定的两列画图</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.plot(x=<span class="string">'score'</span>, y=<span class="string">'num'</span>, kind=<span class="string">'line'</span>)</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/03/pandas学习笔记（持续更新中）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -459,18 +429,12 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/01/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -581,6 +545,28 @@
 
         
         
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.codingnow.com/" title="云风的BLOG" target="_blank">云风的BLOG</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xzliang.github.io/" title="Thinking and Living" target="_blank">Thinking and Living</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
@@ -613,7 +599,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -678,13 +664,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
 

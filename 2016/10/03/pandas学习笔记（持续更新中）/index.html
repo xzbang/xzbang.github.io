@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,pandas," />
 
 
 
@@ -86,12 +86,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="xzbang">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1.DataFrame 对特定的两列画图1df.plot(x=&apos;score&apos;, y=&apos;num&apos;, kind=&apos;line&apos;)
+2.输出DataFrame中每一列的数据类型12345678910In[34]: import pandasIn[35]: import pandas as pdIn[36]: data2 = [[1,2.4,&apos;a&apos;],[2,4.3,&apos;b&apos;],[3,2.2,&apos;c&apos;]]In[3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pandas学习笔记（持续更新中）">
+<meta property="og:url" content="http://yoursite.com/2016/10/03/pandas学习笔记（持续更新中）/index.html">
 <meta property="og:site_name" content="xzbang">
+<meta property="og:description" content="1.DataFrame 对特定的两列画图1df.plot(x=&apos;score&apos;, y=&apos;num&apos;, kind=&apos;line&apos;)
+2.输出DataFrame中每一列的数据类型12345678910In[34]: import pandasIn[35]: import pandas as pdIn[36]: data2 = [[1,2.4,&apos;a&apos;],[2,4.3,&apos;b&apos;],[3,2.2,&apos;c&apos;]]In[3">
+<meta property="og:updated_time" content="2016-10-03T06:02:39.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xzbang">
+<meta name="twitter:title" content="pandas学习笔记（持续更新中）">
+<meta name="twitter:description" content="1.DataFrame 对特定的两列画图1df.plot(x=&apos;score&apos;, y=&apos;num&apos;, kind=&apos;line&apos;)
+2.输出DataFrame中每一列的数据类型12345678910In[34]: import pandasIn[35]: import pandas as pdIn[36]: data2 = [[1,2.4,&apos;a&apos;],[2,4.3,&apos;b&apos;],[3,2.2,&apos;c&apos;]]In[3">
 
 
 
@@ -112,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/03/pandas学习笔记（持续更新中）/"/>
 
-  <title> xzbang </title>
+  <title> pandas学习笔记（持续更新中） | xzbang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -145,9 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +239,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -256,10 +261,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/10/03/pandas学习笔记（持续更新中）/" itemprop="url">
-                  pandas学习笔记（持续更新中）
-                </a>
+                pandas学习笔记（持续更新中）
               
             
           </h1>
@@ -325,9 +327,7 @@
       
 
       
-        
-          
-            <h6 id="1-DataFrame-对特定的两列画图"><a href="#1-DataFrame-对特定的两列画图" class="headerlink" title="1.DataFrame 对特定的两列画图"></a>1.DataFrame 对特定的两列画图</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.plot(x=<span class="string">'score'</span>, y=<span class="string">'num'</span>, kind=<span class="string">'line'</span>)</div></pre></td></tr></table></figure>
+        <h6 id="1-DataFrame-对特定的两列画图"><a href="#1-DataFrame-对特定的两列画图" class="headerlink" title="1.DataFrame 对特定的两列画图"></a>1.DataFrame 对特定的两列画图</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.plot(x=<span class="string">'score'</span>, y=<span class="string">'num'</span>, kind=<span class="string">'line'</span>)</div></pre></td></tr></table></figure>
 <h6 id="2-输出DataFrame中每一列的数据类型"><a href="#2-输出DataFrame中每一列的数据类型" class="headerlink" title="2.输出DataFrame中每一列的数据类型"></a>2.输出DataFrame中每一列的数据类型</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">34</span>]: <span class="keyword">import</span> pandas</div><div class="line">In[<span class="number">35</span>]: <span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">In[<span class="number">36</span>]: data2 = [[<span class="number">1</span>,<span class="number">2.4</span>,<span class="string">'a'</span>],[<span class="number">2</span>,<span class="number">4.3</span>,<span class="string">'b'</span>],[<span class="number">3</span>,<span class="number">2.2</span>,<span class="string">'c'</span>]]</div><div class="line">In[<span class="number">37</span>]: df = pd.DataFrame(data=data2, columns=[<span class="string">'num'</span>, <span class="string">'price'</span>, <span class="string">'name'</span>])</div><div class="line">In[<span class="number">38</span>]: df.dtypes</div><div class="line">Out[<span class="number">38</span>]: </div><div class="line">num        int64</div><div class="line">price    float64</div><div class="line">name      object</div><div class="line">dtype: object</div></pre></td></tr></table></figure>
 <h6 id="3-DataFrame按列值过滤数据"><a href="#3-DataFrame按列值过滤数据" class="headerlink" title="3.DataFrame按列值过滤数据"></a>3.DataFrame按列值过滤数据</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">46</span>]: <span class="keyword">print</span> df[(df.num&gt;<span class="number">2</span>) &amp; (df.price&lt;<span class="number">4.3</span>)]</div><div class="line">   num  price name</div><div class="line"><span class="number">2</span>    <span class="number">3</span>    <span class="number">2.2</span>    c</div></pre></td></tr></table></figure>
 <h6 id="4-python正则表达式"><a href="#4-python正则表达式" class="headerlink" title="4.python正则表达式"></a>4.python正则表达式</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">24</span>]: <span class="keyword">import</span> re</div><div class="line">In[<span class="number">25</span>]: pattern = re.compile(<span class="string">r'^[0-9]&#123;11&#125;$'</span>)</div><div class="line">In[<span class="number">26</span>]: match = pattern.match(<span class="string">'12345678901'</span>)</div><div class="line">In[<span class="number">27</span>]: <span class="keyword">if</span> match: <span class="keyword">print</span> match.group()</div><div class="line"><span class="number">12345678901</span></div></pre></td></tr></table></figure>
@@ -361,145 +361,84 @@
 <h6 id="9-打印python代码中的中文"><a href="#9-打印python代码中的中文" class="headerlink" title="9.打印python代码中的中文"></a>9.打印python代码中的中文</h6><p><em>代码来源于KM</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line">listA = [<span class="string">'\xe9\x93\x81\xe5\xb0\x86\xe5\x86\x9b1.0\xe7\xb3\xbb\xe7\xbb\x9f\xe6\x95\xb0\xe6\x8d\xae\xe8\xbf\x81\xe7\xa7\xbb'</span>]</div><div class="line">dictB = &#123;<span class="string">'name'</span>: <span class="string">'\xe9\x93\x81\xe5\xb0\x86\xe5\x86\x9b1.0\xe7\xb3\xbb\xe7\xbb\x9f\xe6\x95\xb0\xe6\x8d\xae\xe8\xbf\x81\xe7\xa7\xbb'</span>&#125;</div><div class="line">jsonC = &#123;<span class="string">'name'</span>: <span class="string">'\xe9\x93\x81\xe5\xb0\x86\xe5\x86\x9b1.0\xe7\xb3\xbb\xe7\xbb\x9f\xe6\x95\xb0\xe6\x8d\xae\xe8\xbf\x81\xe7\xa7\xbb'</span>&#125;</div><div class="line"></div><div class="line"><span class="keyword">print</span> listA</div><div class="line"><span class="keyword">print</span> dictB</div><div class="line"><span class="keyword">print</span> jsonC</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> _uniout</div><div class="line"><span class="keyword">print</span> _uniout.unescape(str(listA), <span class="string">'utf8'</span>)</div><div class="line"><span class="keyword">print</span> _uniout.unescape(str(dictB), <span class="string">'utf8'</span>)</div><div class="line"><span class="keyword">print</span> json.dumps(jsonC, ensure_ascii=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/01/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-01T12:12:10+08:00" content="2016-10-01">
-              2016-10-01
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/01/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/01/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/pandas/" rel="tag">#pandas</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/01/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -507,6 +446,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/03/pandas学习笔记（持续更新中）/"
+           data-title="pandas学习笔记（持续更新中）" data-url="http://yoursite.com/2016/10/03/pandas学习笔记（持续更新中）/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -526,8 +473,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -584,6 +540,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-DataFrame-对特定的两列画图"><span class="nav-number">1.</span> <span class="nav-text">1.DataFrame 对特定的两列画图</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-输出DataFrame中每一列的数据类型"><span class="nav-number">2.</span> <span class="nav-text">2.输出DataFrame中每一列的数据类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-DataFrame按列值过滤数据"><span class="nav-number">3.</span> <span class="nav-text">3.DataFrame按列值过滤数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-python正则表达式"><span class="nav-number">4.</span> <span class="nav-text">4.python正则表达式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-DataFrame按正则表达式过滤数据"><span class="nav-number">5.</span> <span class="nav-text">5.DataFrame按正则表达式过滤数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-值替换"><span class="nav-number">6.</span> <span class="nav-text">6.值替换</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-格式化数据"><span class="nav-number">7.</span> <span class="nav-text">7.格式化数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-将matplotlib-pyplot的绘图保存到文件"><span class="nav-number">8.</span> <span class="nav-text">8.将matplotlib.pyplot的绘图保存到文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#9-打印python代码中的中文"><span class="nav-number">9.</span> <span class="nav-text">9.打印python代码中的中文</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -687,6 +654,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

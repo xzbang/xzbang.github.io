@@ -92,12 +92,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/24/matplotlib画图学习小结/index.html">
 <meta property="og:site_name" content="xzbang">
 <meta property="og:description" content="前言在做数据分析时，数据可视化往往能够帮助我们更好的理解数据中包含的逻辑关系，在报告制作、数据呈现中更是取着至关重要的作用。matplotlib是一个基于python的强大的画图工具，该项目是由John Hunter于2002年启动，目的是为python构建一个MATLAB式的绘图接口。matplotlib还有支持许多插件，如3D图形的mplot3d和用于地图和投影的basemap，以后有机会再对">
-<meta property="og:image" content="http://yoursite.com/./source/images/matplotlib画图小结示例图一.png">
-<meta property="og:updated_time" content="2016-10-24T16:01:18.468Z">
+<meta property="og:image" content="http://yoursite.com/images/matplotlib画图小结示例图一.png">
+<meta property="og:updated_time" content="2016-10-24T16:19:17.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matplotlib画图学习小结">
 <meta name="twitter:description" content="前言在做数据分析时，数据可视化往往能够帮助我们更好的理解数据中包含的逻辑关系，在报告制作、数据呈现中更是取着至关重要的作用。matplotlib是一个基于python的强大的画图工具，该项目是由John Hunter于2002年启动，目的是为python构建一个MATLAB式的绘图接口。matplotlib还有支持许多插件，如3D图形的mplot3d和用于地图和投影的basemap，以后有机会再对">
-<meta name="twitter:image" content="http://yoursite.com/./source/images/matplotlib画图小结示例图一.png">
+<meta name="twitter:image" content="http://yoursite.com/images/matplotlib画图小结示例图一.png">
 
 
 
@@ -330,7 +330,7 @@
 <p>使用matplotlib进行绘图非常简便，只要你有x轴数据和y轴数据，通过下面四行代码，你就能将你的数据用二维折线图的方式展现出来。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line">plt.figure()</div><div class="line">plt.plot(x, y, <span class="string">'r-'</span>)</div><div class="line">plt.show</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>但是，一般我们在制作数据分析报告的时候，需要一定的美观程度，这就需要用到matplotlib中的许多api，对图形进行精雕细琢，最终得到我们需要的结果。下面对图形美化过程中的一些简单操作过程进行介绍。首先给出画完的效果图如下：</p>
-<p><img src="./source/images/matplotlib画图小结示例图一.png" alt="image"></p>
+<p><img src="/images/matplotlib画图小结示例图一.png" alt="效果图"></p>
 <h6 id="设置窗口大小"><a href="#设置窗口大小" class="headerlink" title="设置窗口大小"></a>设置窗口大小</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>), num=<span class="string">'data distribution'</span>)  <span class="comment"># 设置窗口大小</span></div></pre></td></tr></table></figure>
 <p>figure方法中有许多参数可以对画图窗口进行参数调节和美化，此处介绍两个参数。figsize的作用是设定窗口大小，单位为英寸，第一个参数为长，第二个参数为宽；num表示窗口标记，如果未设置，则为一个递增的数字，每新建一个数字则递增1，也可以设置为字符串，效果如图中数字1所示。</p>
 <h6 id="设置网格线"><a href="#设置网格线" class="headerlink" title="设置网格线"></a>设置网格线</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.grid(<span class="keyword">True</span>)  <span class="comment"># 网格线</span></div></pre></td></tr></table></figure>

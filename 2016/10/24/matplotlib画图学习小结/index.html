@@ -1,0 +1,705 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,matplotlib," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="xzbang" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="ǰ���������ݷ���ʱ�����ݿ��ӻ������ܹ��������Ǹ��õ����������а������߼���ϵ���ڱ������������ݳ����и���ȡ��������Ҫ�����á�matplotlib��һ������python��ǿ���Ļ�ͼ���ߣ�����Ŀ����John Hunter��2002��������Ŀ����Ϊpython����һ��M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matplotlib��ͼѧϰС��">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/matplotlib画图学习小结/index.html">
+<meta property="og:site_name" content="xzbang">
+<meta property="og:description" content="ǰ���������ݷ���ʱ�����ݿ��ӻ������ܹ��������Ǹ��õ����������а������߼���ϵ���ڱ������������ݳ����и���ȡ��������Ҫ�����á�matplotlib��һ������python��ǿ���Ļ�ͼ���ߣ�����Ŀ����John Hunter��2002��������Ŀ����Ϊpython����һ��M">
+<meta property="og:image" content="http://yoursite.com/../images/matplotlib��ͼС��ʾ��ͼһ.png">
+<meta property="og:updated_time" content="2016-10-24T15:47:35.449Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matplotlib��ͼѧϰС��">
+<meta name="twitter:description" content="ǰ���������ݷ���ʱ�����ݿ��ӻ������ܹ��������Ǹ��õ����������а������߼���ϵ���ڱ������������ݳ����и���ȡ��������Ҫ�����á�matplotlib��һ������python��ǿ���Ļ�ͼ���ߣ�����Ŀ����John Hunter��2002��������Ŀ����Ϊpython����һ��M">
+<meta name="twitter:image" content="http://yoursite.com/../images/matplotlib��ͼС��ʾ��ͼһ.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/matplotlib画图学习小结/"/>
+
+  <title> matplotlib��ͼѧϰС�� | xzbang </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ee044872f8bf47f0fa792a1a9fad7200";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xzbang</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                matplotlib��ͼѧϰС��
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-24T23:41:00+08:00" content="2016-10-24">
+              2016-10-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/24/matplotlib画图学习小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/24/matplotlib画图学习小结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="j��"><a href="#j��" class="headerlink" title="ǰ��"></a>ǰ��</h6><p>�������ݷ���ʱ�����ݿ��ӻ������ܹ��������Ǹ��õ����������а������߼���ϵ���ڱ������������ݳ����и���ȡ��������Ҫ�����á�matplotlib��һ������python��ǿ���Ļ�ͼ���ߣ�����Ŀ����John Hunter��2002��������Ŀ����Ϊpython����һ��MATLABʽ�Ļ�ͼ�ӿڡ�matplotlib����֧��������������3Dͼ�ε�mplot3d�����ڵ�ͼ��ͶӰ��basemap���Ժ��л����ٶ���Щ����չ��ѧϰ�ܽᡣ</p>
+<p>ʹ��matplotlib���л�ͼ�ǳ����㣬ֻҪ����x�����ݺ�y�����ݣ�ͨ���������д��룬�����ܽ����������ö�ά����ͼ�ķ�ʽչ�ֳ�����<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line">plt.figure()</div><div class="line">plt.plot(x, y, <span class="string">'r-'</span>)</div><div class="line">plt.show</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>���ǣ�һ���������������ݷ���������ʱ������Ҫһ�������۳̶ȣ�������Ҫ�õ�matplotlib�е�����api����ͼ�ν��о���ϸ�������յõ�������Ҫ�Ľ�����������ͼ�����������е�һЩ�򵥲������̽��н��ܡ����ȸ���������Ч��ͼ���£�</p>
+<p><img src="../images/matplotlib��ͼС��ʾ��ͼһ.png" alt="image"></p>
+<h6 id="���o��ڴ�С"><a href="#���o��ڴ�С" class="headerlink" title="���ô��ڴ�С"></a>���ô��ڴ�С</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>), num=<span class="string">'data distribution'</span>)  <span class="comment"># ���ô��ڴ�С</span></div></pre></td></tr></table></figure>
+<p>figure�������������������ԶԻ�ͼ���ڽ��в������ں��������˴���������������figsize���������趨���ڴ�С����λΪӢ�磬��һ������Ϊ�����ڶ�������Ϊ����num��ʾ���ڱ��ǣ�����δ���ã���Ϊһ�����������֣�ÿ�½�һ������������1��Ҳ��������Ϊ�ַ�����Ч����ͼ������1��ʾ��</p>
+<h6 id="����������"><a href="#����������" class="headerlink" title="����������"></a>����������</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.grid(<span class="keyword">True</span>)  <span class="comment"># ������</span></div></pre></td></tr></table></figure>
+<p>����Ч����ͼ�б���8.</p>
+<h6 id="����ͼT������������С"><a href="#����ͼT������������С" class="headerlink" title="����ͼƬ������������С"></a>����ͼƬ������������С</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.title(<span class="string">'data distribution'</span>, fontsize=<span class="number">14</span>)</div></pre></td></tr></table></figure>
+<p>Ч����ͼ�б���2</p>
+<h6 id="����������-1"><a href="#����������-1" class="headerlink" title="����������"></a>����������</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">plt.xticks(range(<span class="number">1</span>, len(name)+<span class="number">1</span>, <span class="number">1</span>), name)  <span class="comment"># ����x��Ϊ��Ȼ��������Ȼ������ʾname�е��ַ���</span></div><div class="line">plt.xlim(<span class="number">0</span>, len(name)+<span class="number">1</span>)  <span class="comment"># ����x�������귶Χ</span></div><div class="line">plt.ylim(<span class="number">0</span>, max(max(rate), max(rate))*<span class="number">1.1</span>)  <span class="comment"># ����y�������귶Χ</span></div><div class="line">plt.xlabel(<span class="string">'name'</span>, fontsize=<span class="number">12</span>)</div><div class="line">plt.ylabel(<span class="string">'rate'</span>, fontsize=<span class="number">12</span>)</div></pre></td></tr></table></figure>
+<p>ͨ��xticks����X�������ı���λ�úͱ������������ã���ͼ�б���5��<br>ͨ��xlim��ylim���������ķ�Χ�������ã���ͼ�б���5��6��<br>ͨ��xlabel��ylabel����������ͼ���������ã���ͼ�б���3��4<br>���н��������ķ�Χ������һλ��ʹͼƬ�����ۡ�</p>
+<h6 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.plot(range(<span class="number">1</span>, len(name)+<span class="number">1</span>, <span class="number">1</span>), rate, <span class="string">'ro-'</span>, label=<span class="string">'The ratio of name across the country'</span>)</div></pre></td></tr></table></figure>
+<p>ͨ����ro-������ͼ����ɫ������״��ͼ����ʽ<br>ͨ��label����ͼ�����ǣ���ͼ�б���7��������������֮�󻹲���ֱ����ʾ����Ҫͨ��legend����������ͼ����ʾ��λ�á���ʽ��������<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ��ʾͼ��(label), ������ͼ����ʾλ��</span></div><div class="line">plt.legend(loc=<span class="string">'upper right'</span>, ncol=<span class="number">2</span>, fontsize=<span class="number">11</span>, numpoints=<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
+<p>����loc��������ͼ����ʾλ�ã����ز���������[best,lower,left,center]��<br>ncol��ʾ��һ����ʾ����ͼ����Ĭ��Ϊ1��<br>fontsize��ʾͼ����������С��<br>numpoints��ʾͼ���е��ĸ�����</p>
+<h6 id="�������̶�������С����"><a href="#�������̶�������С����" class="headerlink" title="�������̶�������С����"></a>�������̶�������С����</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ax = plt.gca()</div><div class="line"><span class="keyword">for</span> tick <span class="keyword">in</span> ax.xaxis.get_major_ticks():  <span class="comment"># �����������̶�������С</span></div><div class="line">    tick.label.set_fontsize(<span class="number">9</span>)</div><div class="line"><span class="keyword">for</span> tick <span class="keyword">in</span> ax.yaxis.get_major_ticks():</div><div class="line">    tick.label.set_fontsize(<span class="number">9</span>)</div></pre></td></tr></table></figure>
+<p>�������������̶ȵ�������С���е��ڣ�Ч����ͼ�б���5��6��</p>
+<h6 id="��������-1"><a href="#��������-1" class="headerlink" title="��������"></a>��������</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line">__author__ = <span class="string">'xzbang'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line"></div><div class="line">    name = [<span class="string">'li'</span>, <span class="string">'wang'</span>, <span class="string">'zhang'</span>, <span class="string">'liu'</span>, <span class="string">'chen'</span>, <span class="string">'yang'</span>, <span class="string">'zhao'</span>, <span class="string">'huang'</span>, <span class="string">'zhou'</span>, <span class="string">'wu'</span>]</div><div class="line">    rate = [<span class="number">0.0794</span>, <span class="number">0.0741</span>, <span class="number">0.0707</span>, <span class="number">0.0538</span>, <span class="number">0.0453</span>, <span class="number">0.0308</span>, <span class="number">0.0229</span>, <span class="number">0.0223</span>, <span class="number">0.0212</span>, <span class="number">0.0205</span>]</div><div class="line"></div><div class="line">    plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>), num=<span class="string">'name distribution'</span>)  <span class="comment"># ���ô��ڴ�С</span></div><div class="line">    plt.grid(<span class="keyword">True</span>)  <span class="comment"># ������</span></div><div class="line">    plt.title(<span class="string">'data distribution'</span>, fontsize=<span class="number">14</span>)</div><div class="line">    plt.xticks(range(<span class="number">1</span>, len(name)+<span class="number">1</span>, <span class="number">1</span>), name)  <span class="comment"># ����x��Ϊ��Ȼ��������Ȼ������ʾname�е��ַ���</span></div><div class="line">    plt.xlim(<span class="number">0</span>, len(name)+<span class="number">1</span>)  <span class="comment"># ����x�������귶Χ</span></div><div class="line">    plt.ylim(<span class="number">0</span>, max(max(rate), max(rate))*<span class="number">1.1</span>)  <span class="comment"># ����y�������귶Χ</span></div><div class="line">    plt.xlabel(<span class="string">'name'</span>, fontsize=<span class="number">12</span>)</div><div class="line">    plt.ylabel(<span class="string">'rate'</span>, fontsize=<span class="number">12</span>)</div><div class="line">    plt.plot(range(<span class="number">1</span>, len(name)+<span class="number">1</span>, <span class="number">1</span>), rate, <span class="string">'ro-'</span>, label=<span class="string">'The ratio of name across the country'</span>)</div><div class="line">    <span class="comment"># ��ʾͼ����label���� ������ͼ����ʾλ��</span></div><div class="line">    plt.legend(loc=<span class="string">'upper right'</span>, ncol=<span class="number">2</span>, fontsize=<span class="number">11</span>, numpoints=<span class="number">1</span>)  </div><div class="line">    ax = plt.gca()</div><div class="line">    <span class="keyword">for</span> tick <span class="keyword">in</span> ax.xaxis.get_major_ticks():  <span class="comment"># �����������̶�������С</span></div><div class="line">        tick.label.set_fontsize(<span class="number">9</span>)</div><div class="line">    <span class="keyword">for</span> tick <span class="keyword">in</span> ax.yaxis.get_major_ticks():</div><div class="line">        tick.label.set_fontsize(<span class="number">9</span>)</div><div class="line">    plt.show()</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/matplotlib/" rel="tag">#matplotlib</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/03/pandas学习笔记（持续更新中）/" rel="next" title="pandas学习笔记（持续更新中）">
+                <i class="fa fa-chevron-left"></i> pandas学习笔记（持续更新中）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/24/matplotlib画图学习小结/"
+           data-title="matplotlib��ͼѧϰС��" data-url="http://yoursite.com/2016/10/24/matplotlib画图学习小结/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="xzbang" />
+          <p class="site-author-name" itemprop="name">xzbang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.codingnow.com/" title="云风的BLOG" target="_blank">云风的BLOG</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xzliang.github.io/" title="Thinking and Living" target="_blank">Thinking and Living</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#j��"><span class="nav-number">1.</span> <span class="nav-text">ǰ��</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#���o��ڴ�С"><span class="nav-number">2.</span> <span class="nav-text">���ô��ڴ�С</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#����������"><span class="nav-number">3.</span> <span class="nav-text">����������</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#����ͼT������������С"><span class="nav-number">4.</span> <span class="nav-text">����ͼƬ������������С</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#����������-1"><span class="nav-number">5.</span> <span class="nav-text">����������</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#��������"><span class="nav-number">6.</span> <span class="nav-text">��������</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#�������̶�������С����"><span class="nav-number">7.</span> <span class="nav-text">�������̶�������С����</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#��������-1"><span class="nav-number">8.</span> <span class="nav-text">��������</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xzbang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xzbang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
